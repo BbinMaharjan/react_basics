@@ -1,13 +1,12 @@
-import React, { useState } from "react";
-
+import React from "react";
 import {
   Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
   NavLink,
+  NavItem,
   NavbarText,
 } from "reactstrap";
 
@@ -17,6 +16,7 @@ class NavBar extends React.Component {
   state = {
     isOpen: false,
   };
+
   toggle = () => {
     this.setState({
       ...this.state,
@@ -26,27 +26,29 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <Navbar color='dark' light expand='md'>
-          <NavbarBrand href='/'>React Basic</NavbarBrand>
+      <Navbar color='dark' dark expand='md'>
+        <div className='container'>
+          <NavbarBrand href='/'>React Basics</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className='mr-auto' navbar>
               <NavItem>
-                <Link to='/post'>
-                  <NavLink>Post</NavLink>
+                <Link to='/posts'>
+                  {" "}
+                  <NavLink>Posts</NavLink>{" "}
                 </Link>
               </NavItem>
               <NavItem>
-                <Link to='/user'>
-                  <NavLink>User</NavLink>
+                <Link to='/users'>
+                  {" "}
+                  <NavLink>Users</NavLink>{" "}
                 </Link>
               </NavItem>
             </Nav>
-            <NavbarText>LogOut</NavbarText>
+            <NavbarText>Logout</NavbarText>
           </Collapse>
-        </Navbar>
-      </div>
+        </div>
+      </Navbar>
     );
   }
 }
