@@ -7,12 +7,11 @@ import {
   CardBody,
   CardTitle,
   Button,
-  CardImg,
 } from "reactstrap";
 
 import "../pages/user.css";
 
-import Image from "../../src/assets/icon.png";
+import Image from "../assets/index";
 
 const BASE_URL = "https://jsonplaceholder.typicode.com";
 class Users extends React.Component {
@@ -55,18 +54,23 @@ class Users extends React.Component {
         {this.state.users.map((user) => {
           return (
             <Card key={user.id} className='mt-3'>
-              <CardImg
-                src={Image}
-                alt='icon'
-                style={{
-                  marginLeft: "45%",
-                  width: "100px",
-                  height: "100px",
-                }}
-              />
+              <Image name={user.name} style={{ marginleft: "10px" }} />
               <CardBody style={{ textAlign: "center" }}>
                 <CardTitle tag='h5'> {user.name} </CardTitle>
-                <CardText> {user.email} </CardText>
+                <CardText>
+                  {" "}
+                  <label tag='h2' style={{ marginRight: "5px" }}>
+                    Email:
+                  </label>
+                  {user.email}
+                </CardText>
+                <CardText>
+                  {" "}
+                  <label tag='h2' style={{ marginRight: "5px" }}>
+                    City:
+                  </label>
+                  {user.address.city}
+                </CardText>
               </CardBody>
               <Button color='primary'>View Profile</Button>
             </Card>
