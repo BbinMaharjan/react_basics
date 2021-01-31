@@ -33,15 +33,21 @@ class NavBar extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className='mr-auto' navbar>
               <NavItem>
+                <Link to='/users'>
+                  {" "}
+                  <NavLink>Users</NavLink>{" "}
+                </Link>
+              </NavItem>
+              <NavItem>
                 <Link to='/posts'>
                   {" "}
                   <NavLink>Posts</NavLink>{" "}
                 </Link>
               </NavItem>
               <NavItem>
-                <Link to='/users'>
+                <Link to='/gallery'>
                   {" "}
-                  <NavLink>Users</NavLink>{" "}
+                  <NavLink>Gallery</NavLink>{" "}
                 </Link>
               </NavItem>
             </Nav>

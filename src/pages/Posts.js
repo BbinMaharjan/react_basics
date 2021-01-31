@@ -10,6 +10,8 @@ import {
   CardFooter,
 } from "reactstrap";
 
+import "../pages/post.css";
+
 const BASE_URL = "https://jsonplaceholder.typicode.com";
 class Posts extends React.Component {
   state = {
@@ -53,7 +55,16 @@ class Posts extends React.Component {
   };
 
   render() {
-    if (this.state.isLoading) return <Spinner type='grow' color='primary' />;
+    if (this.state.isLoading)
+      return (
+        <div className='spinner'>
+          <Spinner
+            type='grow'
+            color='primary'
+            style={{ width: "5rem", height: "5rem" }}
+          />
+        </div>
+      );
     return (
       <div className='container'>
         {this.state.posts.map((post) => {
